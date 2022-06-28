@@ -1,0 +1,17 @@
+{
+    "name": "jasirilabs/sigma-sms-nextsms",
+    "description": "NextSMS sigma-sms adapter for NextSMS",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "JasiriLabs\\SigmaSMS\\NextSms\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "brunoalfred",
+            "email": "alfredybruno@gmail.com"
+        }
+    ],
+    "require": {}
+}

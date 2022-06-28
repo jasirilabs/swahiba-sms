@@ -1,0 +1,16 @@
+{
+    "name": "jasirilabs/sigma-sms-twiliosms",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "JasiriLabs\\SigmaSMS\\TwilioSms\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "brunoalfred",
+            "email": "alfredybruno@gmail.com"
+        }
+    ],
+    "require": {}
+}

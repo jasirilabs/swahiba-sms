@@ -1,0 +1,15 @@
+{
+    "name": "jasirilabs/sigma-sms-beemsms",
+    "autoload": {
+        "psr-4": {
+            "JasiriLabs\\SigmaSMS\\BeemSms\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "brunoalfred",
+            "email": "alfredybruno@gmail.com"
+        }
+    ],
+    "require": {}
+}

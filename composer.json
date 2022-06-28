@@ -1,0 +1,32 @@
+{
+    "name": "jasirilabs/sigma-sms",
+    "description": "Aggregating SMS services to a single API",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "JasiriLabs\\SigmaSMS\\": "src/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "JasiriLabs\\SigmaSMS\\Tests\\": "tests"
+        },
+    "authors": [
+        {
+            "name": "brunoalfred",
+            "email": "alfredybruno@gmail.com"
+        }
+    ],
+    "require": {}},
+    "require-dev": {
+        "pestphp/pest": "^1.21"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
