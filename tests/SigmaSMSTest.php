@@ -1,19 +1,19 @@
 <?php
 
 
-use JasiriLabs\SigmaSMS\BeemSms\BeemSmsAdapter;
+use JasiriLabs\SigmaSMS\NextSms\NextSmsAdapter;
 use JasiriLabs\SigmaSMS\SigmaSMS;
 
 test('can send sms', function () {
 
     $sms = new SigmaSMS(
-        adapter: new BeemSmsAdapter(),
+        adapter: new NextSmsAdapter(),
         config: []
     );
 
-    $response =  $sms->send('+5511999999999', 'Hello world!');
+    $response =  $sms->send('255757221600', 'Hello sigma SMS!');
 
 
-    $this->assertStringContainsString('+5511999999999', $response);
+    $this->assertStringContainsString('255757221600', $response);
 
 });

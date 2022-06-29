@@ -12,12 +12,6 @@ class SigmaSMS  implements SigmaSMSOperator
 
     private SigmaSMSAdapter $adapter;
 
-    /**
-     * @var Config
-     */
-
-    private Config $config;
-
 
     public function __construct(
         SigmaSMSAdapter $adapter,
@@ -31,10 +25,10 @@ class SigmaSMS  implements SigmaSMSOperator
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
+     * @param string|array $message
      * @return string
      */
-    public function send(string|array $phoneNumber, string $message): string
+    public function send(string|array $phoneNumber, string|array $message): mixed
     {
         return $this->adapter->send($phoneNumber, $message);
     }

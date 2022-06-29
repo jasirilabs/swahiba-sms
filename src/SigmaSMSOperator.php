@@ -8,10 +8,10 @@ interface SigmaSMSOperator
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
+     * @param string|array $message
      * @return string
      */
-    public function send(string|array $phoneNumber, string $message): string;
+    public function send(string|array $phoneNumber, string|array $message): mixed;
 
 
     /**

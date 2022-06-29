@@ -23,3 +23,11 @@ API Design
 	SMS::deliveryReport()
 
 	SMS::balance()
+
+
+ENV Variables
+
+ - SENDER_ID
+ - API_KEY
+ - API_SECRET
+ - APP_ENV
