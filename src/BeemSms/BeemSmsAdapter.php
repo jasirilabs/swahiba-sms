@@ -2,19 +2,52 @@
 
 namespace JasiriLabs\SigmaSMS\BeemSms;
 
+use JasiriLabs\SigmaSMS\Config;
 use JasiriLabs\SigmaSMS\SigmaSMSAdapter;
 
 class BeemSmsAdapter implements SigmaSMSAdapter
 {
     /**
-     * @param string|array $phoneNumber
-     * @param string $message
-     * @return string
+     * @var Config
      */
-    public function send(string|array $phoneNumber, string $message): string
-    {
 
-        return 'BeemSmsAdapter: ' . $phoneNumber . ' - ' . $message;
+    private Config $config;
+
+    public BeamSmsClient $client;
+
+
+
+    public function __construct(Config $config, $apiVersion="v1")
+    {
+        $this->config = $config;
+
+        $this->client = new BeamSmsClient($config, $apiVersion);
+    }
+
+    /**
+     * @param string|array $phoneNumber
+     * @param string|array $message
+     * @return mixed
+     */
+    public function send(string|array $phoneNumber, string|array $message): mixed
+    {
+        $recipients = [];
+        foreach ($phoneNumber as $index => $value){
+            $recipients[] = array(
+                'recipient_id' => $index,
+                'dest_addr' => $value
+            );
+        }
+
+        $data = array(
+            'source_addr' => 'INFO',
+            'encoding'=>0,
+            'schedule_time' => '',
+            'message' => 'Hello World',
+            'recipients' => $recipients
+        );
+
+       return $this->client->post('/send',$data);
 
     }
 
@@ -29,7 +62,23 @@ class BeemSmsAdapter implements SigmaSMSAdapter
     public function schedule(string|array $phoneNumber, string $message, string $time): string
     {
 
-        return 'BeemSmsAdapter: ' . $phoneNumber . ' - ' . $message . ' - ' . $time . ' - scheduled';
+        $recipients = [];
+        foreach ($phoneNumber as $index => $value){
+            $recipients[] = array(
+                'recipient_id' => $index,
+                'dest_addr' => $value
+            );
+        }
+
+        $data = array(
+            'source_addr' => 'INFO',
+            'encoding'=>0,
+            'schedule_time' => $time,
+            'message' => 'Hello World',
+            'recipients' => $recipients
+        );
+
+        return $this->client->post('/send',$data);
 
 
     }
@@ -42,10 +91,9 @@ class BeemSmsAdapter implements SigmaSMSAdapter
 
     public function deliveryReport(string $messageId): string
     {
-
-        return 'BeemSmsAdapter: ' . $messageId . ' - ' . 'deliveryReport';
-
-
+       // return $this->client->get("/delivery-reports?dest_addr={dest_addr}&request_id={request_id}")
+        //TODO: The SIGMASms Adapter need to be changed to receive the above parameters
+        return "";
     }
 
 
@@ -56,9 +104,7 @@ class BeemSmsAdapter implements SigmaSMSAdapter
 
     public function balance(): string
     {
-
-        return 'BeemSmsAdapter: balance';
-
+        return $this->client->get('/vendors/balance');
     }
 
 
