@@ -7,58 +7,40 @@ use JasiriLabs\SigmaSMS\SigmaSMSAdapter;
 class TwilioSmsAdapter implements SigmaSMSAdapter
 {
     /**
-     * @param string|array $phoneNumber
-     * @param string $message
+     * @param  string|array  $phoneNumber
+     * @param  string  $message
      * @return string
      */
     public function send(string|array $phoneNumber, string $message): string
     {
-
-        return 'TwilioSmsAdapter: ' . $phoneNumber . ' - ' . $message;
-
+        return 'TwilioSmsAdapter: '.$phoneNumber.' - '.$message;
     }
 
-
     /**
-     * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
+     * @param  string|array  $phoneNumber
+     * @param  string  $message
+     * @param  string  $time
      * @return string
      */
-
     public function schedule(string|array $phoneNumber, string $message, string $time): string
     {
-
-        return 'TwilioSmsAdapter: ' . $phoneNumber . ' - ' . $message . ' - ' . $time . ' - scheduled';
-
-
+        return 'TwilioSmsAdapter: '.$phoneNumber.' - '.$message.' - '.$time.' - scheduled';
     }
 
-
     /**
-     * @param string $messageId
+     * @param  string  $messageId
      * @return string
      */
-
     public function deliveryReport(string $messageId): string
     {
-
-        return 'TwilioSmsAdapter: ' . $messageId . ' - ' . 'deliveryReport';
-
-
+        return 'TwilioSmsAdapter: '.$messageId.' - '.'deliveryReport';
     }
-
-
 
     /**
      * @return string
      */
-
     public function balance(): string
     {
-
         return 'TwilioSmsAdapter: balance';
-
     }
-
 }
