@@ -1,0 +1,19 @@
+{
+  "sub-splits": [
+    {
+      "name": "beemsms",
+      "directory": "src/BeemSms",
+      "target": "git@github.com:jasirilabs/sigma-beemsms.git"
+    },
+    {
+      "name": "nextsms",
+      "directory": "src/NextSms",
+      "target": "git@github.com:jasirilabs/sigma-nextsms.git"
+    },
+    {
+      "name": "twiliosms",
+      "directory": "src/TwilioSms",
+      "target": "git@github.com:jasirilabs/sigma-twiliosms.git"
+    }
+  ]
+}
