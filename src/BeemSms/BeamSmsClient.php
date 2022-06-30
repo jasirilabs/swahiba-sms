@@ -44,7 +44,7 @@ class BeamSmsClient
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
                 ],
-                'auth' => [$this->config->get('username'), $this->config->get('password')],
+                'auth' => [$this->config->get('api_key'), $this->config->get('secret_key')],
             ]
         );
     }
