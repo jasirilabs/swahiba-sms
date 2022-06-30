@@ -1,4 +1,8 @@
-# sigma-sms
+<h1 style="text-align: center;">
+Sigma Sms
+</h1>
+
+![Banner Image](./docs/banner.png)
 
 **Note**
 > Feel free to play with the code.
