@@ -92,31 +92,24 @@ class NextSmsAdapter implements SigmaSMSAdapter
 
 
     /**
-     * @param string $messageId
-     * @return string
+     * @param array|null $params
+     * @return array
      */
 
-    public function deliveryReport(string $messageId): string
+    public function deliveryReport(array|null $params): array
     {
-
-
-
-
+        return $this->client->get('/reports', $params);
     }
-
 
 
     /**
-     * @return string
+     * @return array
      */
 
-    public function balance(): string
+    public function balance(): array
     {
-
-        return 'NextSmsAdapter: balance';
-
+        return $this->client->get('/balance');
     }
-
 
 
 }

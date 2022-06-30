@@ -50,13 +50,13 @@ class SigmaSMS  implements SigmaSMSOperator
 
 
     /**
-     * @param string $messageId
-     * @return string
+     * @param array|null $params
+     * @return array
      */
 
-    public function deliveryReport(string $messageId): string
+    public function deliveryReport(array|null $params = null): array
     {
-        return $this->adapter->deliveryReport($messageId);
+        return $this->adapter->deliveryReport($params);
     }
 
 
@@ -64,10 +64,10 @@ class SigmaSMS  implements SigmaSMSOperator
 
 
     /**
-     * @return string
+     * @return array
      */
 
-    public function balance(): string
+    public function balance(): array
     {
         return $this->adapter->balance();
     }

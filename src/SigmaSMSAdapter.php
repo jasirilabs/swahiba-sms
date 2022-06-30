@@ -24,19 +24,19 @@ interface SigmaSMSAdapter
 
 
     /**
-     * @param string $messageId
-     * @return string
+     * @param array|null $params
+     * @return array
      */
 
-    public function deliveryReport(string $messageId): string;
+    public function deliveryReport(array|null $params): array;
 
 
 
     /**
-     * @return string
+     * @return array
      */
 
-    public function balance(): string;
+    public function balance(): array;
 
 
 
