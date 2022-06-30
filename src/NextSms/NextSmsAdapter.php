@@ -35,9 +35,9 @@ class NextSmsAdapter implements SigmaSMSAdapter
     /**
      * @param string|array $phoneNumber
      * @param string|array $message
-     * @return string
+     * @return array
      */
-    public function send(string|array $phoneNumber, string|array $message): mixed
+    public function send(string|array $phoneNumber, string|array $message): array
     {
 
         $singleMessageEndpoint = '/text/single';
@@ -70,20 +70,20 @@ class NextSmsAdapter implements SigmaSMSAdapter
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
-     * @return string
+     * @param string|array $message
+     * @param array $params
+     * @return array
      */
 
-    public function schedule(string|array $phoneNumber, string $message, string $time): string
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
     {
 
         $data = [
             'from' => 'NEXTSMS',
             'to' => $phoneNumber,
             'text' => $message,
-            'date' => date('Y-m-d', $time),
-            'time' => date('H:m', $time),
+            'date' => $params['date'],
+            'time' => $params['time'],
         ];
 
         return $this->client->post('/text/single', $data);

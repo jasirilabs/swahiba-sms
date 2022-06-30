@@ -8,19 +8,19 @@ interface SigmaSMSAdapter
     /**
      * @param string|array $phoneNumber
      * @param string|array $message
-     * @return string
+     * @return array
      */
-    public function send(string|array $phoneNumber, string|array $message): mixed;
+    public function send(string|array $phoneNumber, string|array $message): array;
 
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
-     * @return string
+     * @param string|array $message
+     * @param array $params
+     * @return array
      */
 
-    public function schedule(string|array $phoneNumber, string $message, string $time): string;
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): array;
 
 
     /**

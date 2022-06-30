@@ -26,9 +26,9 @@ class SigmaSMS  implements SigmaSMSOperator
     /**
      * @param string|array $phoneNumber
      * @param string|array $message
-     * @return string
+     * @return array
      */
-    public function send(string|array $phoneNumber, string|array $message): mixed
+    public function send(string|array $phoneNumber, string|array $message): array
     {
         return $this->adapter->send($phoneNumber, $message);
     }
@@ -36,14 +36,14 @@ class SigmaSMS  implements SigmaSMSOperator
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
-     * @return string
+     * @param string|array $message
+     * @param array $params
+     * @return array
      */
 
-    public function schedule(string|array $phoneNumber, string $message, string $time): string
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
     {
-        return $this->adapter->schedule($phoneNumber, $message, $time);
+        return $this->adapter->schedule($phoneNumber, $message, $params);
     }
 
 

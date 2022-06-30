@@ -54,12 +54,12 @@ class BeemSmsAdapter implements SigmaSMSAdapter
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
-     * @return string
+     * @param string|array $message
+     * @param array $params
+     * @return array
      */
 
-    public function schedule(string|array $phoneNumber, string $message, string $time): string
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
     {
 
         $recipients = [];
@@ -73,7 +73,7 @@ class BeemSmsAdapter implements SigmaSMSAdapter
         $data = array(
             'source_addr' => 'INFO',
             'encoding'=>0,
-            'schedule_time' => $time,
+            'schedule_time' => $params['time'],
             'message' => 'Hello World',
             'recipients' => $recipients
         );
@@ -85,24 +85,24 @@ class BeemSmsAdapter implements SigmaSMSAdapter
 
 
     /**
-     * @param string $messageId
-     * @return string
+     * @param array|null $params
+     * @return array
      */
 
-    public function deliveryReport(string $messageId): string
+    public function deliveryReport(array|null $params): array
     {
        // return $this->client->get("/delivery-reports?dest_addr={dest_addr}&request_id={request_id}")
         //TODO: The SIGMASms Adapter need to be changed to receive the above parameters
-        return "";
+        return [];
     }
 
 
 
     /**
-     * @return string
+     * @return array
      */
 
-    public function balance(): string
+    public function balance(): array
     {
         return $this->client->get('/vendors/balance');
     }
