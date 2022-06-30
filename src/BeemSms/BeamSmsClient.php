@@ -60,10 +60,12 @@ class BeamSmsClient
         return json_decode($response->getBody()->getContents(), true);
     }
 
-    public function get($endpoint)
+    public function get($endpoint, array $params = null)
     {
         $url =  "/public/". $this->apiVersion . $endpoint;
-        $response = $this->client->request('GET', $url);
+        $response = $this->client->request('GET', $url, [
+            'query' => is_null($params) ? [] : http_build_query($params),
+        ]);
         return json_decode($response->getBody()->getContents(), true);
     }
 

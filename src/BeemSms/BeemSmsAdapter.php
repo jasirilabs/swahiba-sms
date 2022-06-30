@@ -91,12 +91,10 @@ class BeemSmsAdapter implements SigmaSMSAdapter
 
     public function deliveryReport(array|null $params): array
     {
-       // return $this->client->get("/delivery-reports?dest_addr={dest_addr}&request_id={request_id}")
-        //TODO: The SIGMASms Adapter need to be changed to receive the above parameters
-        return [];
+
+        return $this->client->get('/delivery-reports', $params);
+
     }
-
-
 
     /**
      * @return array
