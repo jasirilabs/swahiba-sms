@@ -29,7 +29,7 @@ class BeemSmsAdapter implements SigmaSMSAdapter
      * @param string|array $message
      * @return mixed
      */
-    public function send(string|array $phoneNumber, string|array $message): mixed
+    public function send(string|array $phoneNumber, string|array $message): array
     {
         $recipients = [];
         foreach ($phoneNumber as $index => $value){
