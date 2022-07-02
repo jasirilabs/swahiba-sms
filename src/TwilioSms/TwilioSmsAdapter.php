@@ -19,7 +19,6 @@ class TwilioSmsAdapter implements NanasiSmsAdapter
 
     }
 
-
     /**
      * @param string|array $phoneNumber
      * @param string|array $message
@@ -33,7 +32,6 @@ class TwilioSmsAdapter implements NanasiSmsAdapter
         return [];
 
     }
-
 
     /**
      * @param array|null $params
@@ -58,5 +56,4 @@ class TwilioSmsAdapter implements NanasiSmsAdapter
         return [];
 
     }
-
 }

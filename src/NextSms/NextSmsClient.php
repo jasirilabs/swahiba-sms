@@ -5,42 +5,28 @@ namespace JasiriLabs\NanasiSms\NextSms;
 use GuzzleHttp\Client;
 use JasiriLabs\NanasiSms\Config;
 
-
 class NextSmsClient
 {
-
-
     // base url for the NextSms API
     const BASE_URL = 'https://messaging-service.co.tz';
 
-
     /**
-     *
      * @var config
-     *
      */
-
     private Config $config;
 
-
     /**
-     *
      * The NextSms API version
-     *
      */
-
     private string $apiVersion = '/api/sms/v1';
-
 
     private Client $client;
 
-
     public function __construct($config)
     {
-
         $this->config = $config;
 
-        $this->client =  new Client(
+        $this->client = new Client(
             [
                 'base_uri' => self::BASE_URL,
                 'headers' => [
@@ -52,20 +38,19 @@ class NextSmsClient
         );
     }
 
-
-
     public function post($endpoint, $data)
     {
-        $url =  $this->apiVersion . $endpoint;
+        $url = $this->apiVersion.$endpoint;
         $response = $this->client->request('POST', $url, [
             'body' => json_encode($data),
         ]);
+
         return json_decode($response->getBody()->getContents(), true);
     }
 
     public function get($endpoint, array $params = null)
     {
-        $url =  $this->apiVersion . $endpoint;
+        $url = $this->apiVersion.$endpoint;
 
         $response = $this->client->request('GET', $url, [
             'query' => is_null($params) ? [] : http_build_query($params),
@@ -73,6 +58,4 @@ class NextSmsClient
 
         return json_decode($response->getBody()->getContents(), true);
     }
-
-
 }

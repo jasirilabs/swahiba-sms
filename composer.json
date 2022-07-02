@@ -19,7 +19,8 @@
     ],
     "require": {}},
     "require-dev": {
-        "pestphp/pest": "^1.21"
+        "pestphp/pest": "^1.21",
+        "laravel/pint": "^0.2.1"
     },
     "config": {
         "allow-plugins": {
