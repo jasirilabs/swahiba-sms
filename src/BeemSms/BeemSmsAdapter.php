@@ -1,11 +1,12 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS\BeemSms;
+namespace JasiriLabs\NanasiSms\BeemSms;
 
-use JasiriLabs\SigmaSMS\Config;
-use JasiriLabs\SigmaSMS\SigmaSMSAdapter;
+use JasiriLabs\NanasiSms\NanasiSmsAdapter;
+use JasiriLabs\NanasiSms\Config;
 
-class BeemSmsAdapter implements SigmaSMSAdapter
+
+class BeemSmsAdapter implements NanasiSmsAdapter
 {
     /**
      * @var Config

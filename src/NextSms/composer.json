@@ -1,10 +1,10 @@
 {
-    "name": "jasirilabs/sigma-sms-nextsms",
-    "description": "NextSMS sigma-sms adapter for NextSMS",
+    "name": "jasirilabs/nanasi-nextsms",
+    "description": "NextSMS nanasisms adapter for NextSMS",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\SigmaSMS\\NextSms\\": ""
+            "JasiriLabs\\NanasiSms\\NextSms\\": ""
         }
     },
     "authors": [

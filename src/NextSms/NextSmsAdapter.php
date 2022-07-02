@@ -4,10 +4,10 @@ namespace JasiriLabs\SigmaSMS\NextSms;
 
 
 use JasiriLabs\SigmaSMS\Config;
-use JasiriLabs\SigmaSMS\SigmaSMSAdapter;
+use JasiriLabs\SigmaSMS\NanasiSmsAdapter;
 
 
-class NextSmsAdapter implements SigmaSMSAdapter
+class NextSmsAdapter implements NanasiSmsAdapter
 {
 
 

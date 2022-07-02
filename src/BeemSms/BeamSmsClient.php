@@ -1,8 +1,9 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS\BeemSms;
+namespace JasiriLabs\NanasiSms\BeemSms;
+
 use GuzzleHttp\Client;
-use JasiriLabs\SigmaSMS\Config;
+use JasiriLabs\NanasiSms\Config;
 
 class BeamSmsClient
 {

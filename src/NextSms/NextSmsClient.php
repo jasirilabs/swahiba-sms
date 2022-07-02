@@ -1,9 +1,9 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS\NextSms;
+namespace JasiriLabs\NanasiSms\NextSms;
 
 use GuzzleHttp\Client;
-use JasiriLabs\SigmaSMS\Config;
+use JasiriLabs\NanasiSms\Config;
 
 
 class NextSmsClient

@@ -3,17 +3,17 @@
     {
       "name": "beemsms",
       "directory": "src/BeemSms",
-      "target": "git@github.com:jasirilabs/sigma-beemsms.git"
+      "target": "git@github.com:jasirilabs/nanasi-beemsms.git"
     },
     {
       "name": "nextsms",
       "directory": "src/NextSms",
-      "target": "git@github.com:jasirilabs/sigma-nextsms.git"
+      "target": "git@github.com:jasirilabs/nanasi-nextsms.git"
     },
     {
       "name": "twiliosms",
       "directory": "src/TwilioSms",
-      "target": "git@github.com:jasirilabs/sigma-twiliosms.git"
+      "target": "git@github.com:jasirilabs/nanasi-twiliosms.git"
     }
   ]
 }

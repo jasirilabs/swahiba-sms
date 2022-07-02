@@ -1,8 +1,8 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS;
+namespace JasiriLabs\NanasiSms;
 
-interface SigmaSMSAdapter
+interface NanasiSmsAdapter
 {
 
     /**

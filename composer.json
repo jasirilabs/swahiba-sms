@@ -1,15 +1,15 @@
 {
-    "name": "jasirilabs/sigma-sms",
+    "name": "jasirilabs/nanasisms",
     "description": "Aggregating SMS services to a single API",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\SigmaSMS\\": "src/"
+            "JasiriLabs\\NanasiSms\\": "src/"
         }
     },
      "autoload-dev": {
         "psr-4": {
-            "JasiriLabs\\SigmaSMS\\Tests\\": "tests"
+            "JasiriLabs\\NanasiSms\\Tests\\": "tests"
         },
     "authors": [
         {

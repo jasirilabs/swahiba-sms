@@ -1,63 +1,61 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS\TwilioSms;
+namespace JasiriLabs\NanasiSms\TwilioSms;
 
-use JasiriLabs\SigmaSMS\SigmaSMSAdapter;
+use JasiriLabs\NanasiSms\NanasiSmsAdapter;
 
-class TwilioSmsAdapter implements SigmaSMSAdapter
+
+class TwilioSmsAdapter implements NanasiSmsAdapter
 {
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @return string
+     * @param string|array $message
+     * @return array
      */
-    public function send(string|array $phoneNumber, string $message): string
+    public function send(string|array $phoneNumber, string|array $message): array
     {
 
-        return 'TwilioSmsAdapter: ' . $phoneNumber . ' - ' . $message;
+        return [];
 
     }
 
 
     /**
      * @param string|array $phoneNumber
-     * @param string $message
-     * @param string $time
-     * @return string
+     * @param string|array $message
+     * @param array $params
+     * @return array
      */
 
-    public function schedule(string|array $phoneNumber, string $message, string $time): string
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
     {
 
-        return 'TwilioSmsAdapter: ' . $phoneNumber . ' - ' . $message . ' - ' . $time . ' - scheduled';
-
+        return [];
 
     }
 
 
     /**
-     * @param string $messageId
-     * @return string
+     * @param array|null $params
+     * @return array
      */
 
-    public function deliveryReport(string $messageId): string
+    public function deliveryReport(array|null $params): array
     {
 
-        return 'TwilioSmsAdapter: ' . $messageId . ' - ' . 'deliveryReport';
-
+        return [];
 
     }
 
 
-
     /**
-     * @return string
+     * @return array
      */
 
-    public function balance(): string
+    public function balance(): array
     {
 
-        return 'TwilioSmsAdapter: balance';
+        return [];
 
     }
 

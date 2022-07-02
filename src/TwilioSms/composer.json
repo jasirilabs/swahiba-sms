@@ -1,9 +1,9 @@
 {
-    "name": "jasirilabs/sigma-sms-twiliosms",
+    "name": "jasirilabs/nanasi-twiliosms",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\SigmaSMS\\TwilioSms\\": ""
+            "JasiriLabs\\NanasiSms\\TwilioSms\\": ""
         }
     },
     "authors": [

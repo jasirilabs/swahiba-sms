@@ -1,8 +1,8 @@
 {
-    "name": "jasirilabs/sigma-sms-beemsms",
+    "name": "jasirilabs/nanasi-beemsms",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\SigmaSMS\\BeemSms\\": ""
+            "JasiriLabs\\NanasiSms\\BeemSms\\": ""
         }
     },
     "authors": [

@@ -1,25 +1,23 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS;
+namespace JasiriLabs\NanasiSms;
 
 
-class SigmaSMS  implements SigmaSMSOperator
+class NanasiSms  implements NanasiSmsOperator
 {
 
     /**
-     * @var SigmaSMSAdapter
+     * @var NanasiSmsAdapter
      */
 
-    private SigmaSMSAdapter $adapter;
+    private NanasiSmsAdapter $adapter;
 
 
     public function __construct(
-        SigmaSMSAdapter $adapter,
-        array $config
+        NanasiSmsAdapter $adapter,
     )
     {
         $this->adapter = $adapter;
-        $this->config = new Config($config);
     }
 
 
@@ -58,7 +56,6 @@ class SigmaSMS  implements SigmaSMSOperator
     {
         return $this->adapter->deliveryReport($params);
     }
-
 
 
 

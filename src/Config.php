@@ -1,6 +1,6 @@
 <?php
 
-namespace JasiriLabs\SigmaSMS;
+namespace JasiriLabs\NanasiSms;
 
 class Config
 {

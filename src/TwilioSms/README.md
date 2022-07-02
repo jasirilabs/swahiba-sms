@@ -1,12 +1,12 @@
-## Sub-split of SigmaSms for TwilioSms
+## Sub-split of NanasiSms for TwilioSms
 
-> ⚠️ this is a sub-split, for pull requests and issues, visit: https://github.com/jasirilabs/sigma-sms
+> ⚠️ this is a sub-split, for pull requests and issues, visit: https://github.com/jasirilabs/nanasisms
 
 Require this package to make use of TwilioSms.
 
 
 ```bash
-composer require jasirilabs/sigma-twiliosms
+composer require jasirilabs/nanasi-twiliosms
 ```
 
-View the [documentation of SigmaSms]().
+View the [documentation of NanasiSms]().
