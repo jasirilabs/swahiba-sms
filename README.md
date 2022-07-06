@@ -1,5 +1,5 @@
 <h1 style="text-align: center;">
-Sigma Sms
+Nanasi Sms
 </h1>
 
 ![Banner Image](./docs/banner.png)
@@ -14,13 +14,13 @@ Sigma Sms
 
 ```php
 
-use JasiriLabs\SigmaSMS\Config;
-use JasiriLabs\SigmaSMS\NextSms\NextSmsAdapter;
-use JasiriLabs\SigmaSMS\SigmaSMS;
+use JasiriLabs\NanasiSMS\Config;
+use JasiriLabs\NanasiSMS\NextSms\NextSmsAdapter;
+use JasiriLabs\NanasiSMS\NanasiSMS;
 
 $config = new Config(['username' => 'username', 'password' => 'password']);
 
-$sms = new SigmaSMS(
+$sms = new NanasiSMS(
     new NextSmsAdapter($config),
     []
 );
@@ -40,3 +40,22 @@ $sms->deliveryReport(['limit' => 3])
 $sms->balance()
 
 ```
+
+
+## Contributing 
+
+We value contributions from the community. If you have any questions, please open an issue or pull request.
+
+
+## Security Vulnerabilities
+
+In case of any security issue just email us at  [support@jasirilabs.com](mailto:support@jasirilabs.com)
+
+
+## License
+
+    This project is licensed under the MIT license.
+    See the LICENSE file for more information.
+
+
+
