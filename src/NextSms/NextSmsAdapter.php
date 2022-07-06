@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JasiriLabs\SigmaSMS\NextSms;
 
 use JasiriLabs\NanasiSms\Config;
@@ -20,7 +22,7 @@ class NextSmsAdapter implements NanasiSmsAdapter
     {
         $this->config = $config;
 
-        $this->client = new NextSmsClient($config);
+        $this->client = new NextSmsClient($this->config);
     }
 
     /**

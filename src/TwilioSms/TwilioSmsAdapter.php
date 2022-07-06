@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JasiriLabs\NanasiSms\TwilioSms;
 
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;

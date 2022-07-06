@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JasiriLabs\NanasiSms\BeemSms;
 
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
@@ -19,7 +21,7 @@ class BeemSmsAdapter implements NanasiSmsAdapter
     {
         $this->config = $config;
 
-        $this->client = new BeamSmsClient($config, $apiVersion);
+        $this->client = new BeamSmsClient($this->config, $apiVersion);
     }
 
     /**

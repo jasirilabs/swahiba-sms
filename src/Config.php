@@ -14,7 +14,7 @@ class Config
         $this->options = $options;
     }
 
-    public function get(string $key, $default = null)
+    public function get(string $key, string $default = null): ?string
     {
         return $this->options[$key] ?? $default;
     }

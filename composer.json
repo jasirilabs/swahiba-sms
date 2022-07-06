@@ -14,7 +14,8 @@
     },
     "require-dev": {
         "pestphp/pest": "^1.21",
-        "laravel/pint": "^0.2.1"
+        "laravel/pint": "^0.2.1",
+        "phpstan/phpstan": "^1.8"
     },
     "require": {
         "guzzlehttp/guzzle": "^7.0"
