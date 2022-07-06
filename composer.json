@@ -10,24 +10,24 @@
      "autoload-dev": {
         "psr-4": {
             "JasiriLabs\\NanasiSms\\Tests\\": "tests"
-        },
-    "authors": [
-        {
-            "name": "brunoalfred",
-            "email": "bruno@jasirilabs.com"
         }
-    ],
-    "require": {}},
+    },
     "require-dev": {
         "pestphp/pest": "^1.21",
         "laravel/pint": "^0.2.1"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
     },
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
     },
-    "require": {
-        "guzzlehttp/guzzle": "^7.0"
-    }
+    "authors": [
+        {
+            "name": "Bruno Alfred",
+            "email": "bruno@jasirilabs.com"
+        }
+    ]
 }
