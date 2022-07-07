@@ -3,13 +3,13 @@ name: Sub-Split Publishing
 on:
   push:
     branches:
-      - main
+      - 0.x
   create:
     tags:
-      - '*.*'
+      - '0.*'
   delete:
     tags:
-      - '*.*'
+      - '0.*'
 
 jobs:
   publish_subsplits:
