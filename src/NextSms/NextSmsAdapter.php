@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\SigmaSMS\NextSms;
+namespace JasiriLabs\NanasiSMS\NextSms;
 
 use JasiriLabs\NanasiSms\Config;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
