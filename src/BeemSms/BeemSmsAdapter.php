@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace JasiriLabs\NanasiSms\BeemSms;
 
-use JasiriLabs\NanasiSms\NanasiSmsAdapter;
 use JasiriLabs\NanasiSms\Config;
-
+use JasiriLabs\NanasiSms\DeliveryReportResponse;
+use JasiriLabs\NanasiSms\NanasiSmsAdapter;
+use JasiriLabs\NanasiSms\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\SmsBalanceResponse;
 
 class BeemSmsAdapter implements NanasiSmsAdapter
 {
@@ -27,9 +30,9 @@ class BeemSmsAdapter implements NanasiSmsAdapter
     /**
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
-     * @return mixed
+     * @return SendSmsResponse
      */
-    public function send(string|array $phoneNumber, string|array $message): array
+    public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
     {
         if (is_array($message)) {
             foreach ($message as $text) {
@@ -44,26 +47,26 @@ class BeemSmsAdapter implements NanasiSmsAdapter
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
      * @param  array  $params
-     * @return array
+     * @return ScheduleSmsResponse
      */
-    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): ScheduleSmsResponse
     {
         return $this->sendSMS($phoneNumber, $message, $params);
     }
 
     /**
      * @param  array|null  $params
-     * @return array
+     * @return DeliveryReportResponse
      */
-    public function deliveryReport(array|null $params): array
+    public function deliveryReport(array|null $params): DeliveryReportResponse
     {
         return $this->client->get('/delivery-reports', $params);
     }
 
     /**
-     * @return array
+     * @return SmsBalanceResponse
      */
-    public function balance(): array
+    public function balance(): SmsBalanceResponse
     {
         return $this->client->get('/vendors/balance');
     }

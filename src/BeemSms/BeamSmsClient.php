@@ -17,17 +17,12 @@ class BeamSmsClient
      */
     private Config $config;
 
-
-
     /**
      * The NextSms API version
      */
     private string $apiVersion = 'v1';
 
-
     private Client $client;
-
-
 
     public function __construct($config, $apiVersion)
     {

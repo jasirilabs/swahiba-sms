@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSMS\NextSms;
+namespace JasiriLabs\NanasiSms\NextSms;
 
 use JasiriLabs\NanasiSms\Config;
+use JasiriLabs\NanasiSms\DeliveryReportResponse;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\NextSms\NextSmsClient;
-
+use JasiriLabs\NanasiSms\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\SmsBalanceResponse;
 
 class NextSmsAdapter implements NanasiSmsAdapter
 {
@@ -28,16 +30,16 @@ class NextSmsAdapter implements NanasiSmsAdapter
     /**
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
-     * @return array
+     * @return SendSmsResponse
      */
-    public function send(string|array $phoneNumber, string|array $message): array
+    public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
     {
         $singleMessageEndpoint = '/text/single';
 
         $multipleMessageEndpoint = '/text/multi';
 
         if (is_array($message)) {
-            $data = ['messages'=> []];
+            $data = ['messages' => []];
             foreach ($message as $text) {
                 $data['messages'][] = [
                     'from' => 'NEXTSMS',
@@ -60,9 +62,9 @@ class NextSmsAdapter implements NanasiSmsAdapter
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
      * @param  array  $params
-     * @return array
+     * @return ScheduleSmsResponse
      */
-    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): ScheduleSmsResponse
     {
         $data = [
             'from' => 'NEXTSMS',
@@ -77,17 +79,17 @@ class NextSmsAdapter implements NanasiSmsAdapter
 
     /**
      * @param  array|null  $params
-     * @return array
+     * @return DeliveryReportResponse
      */
-    public function deliveryReport(array|null $params): array
+    public function deliveryReport(array|null $params): DeliveryReportResponse
     {
         return $this->client->get('/reports', $params);
     }
 
     /**
-     * @return array
+     * @return SmsBalanceResponse
      */
-    public function balance(): array
+    public function balance(): SmsBalanceResponse
     {
         return $this->client->get('/balance');
     }
