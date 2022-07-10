@@ -35,7 +35,6 @@ class NextSmsAdapter implements NanasiSmsAdapter
     public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
     {
         $singleMessageEndpoint = '/text/single';
-
         $multipleMessageEndpoint = '/text/multi';
 
         if (is_array($message)) {
@@ -47,15 +46,21 @@ class NextSmsAdapter implements NanasiSmsAdapter
                     'text' => $text,
                 ];
             }
-
-            return  $this->client->post($multipleMessageEndpoint, $data);
+            $response = $this->client->post($multipleMessageEndpoint, $data);
+        } else {
+            $response  =  $this->client->post($singleMessageEndpoint, [
+                'from' => 'NEXTSMS',
+                'to' => $phoneNumber,
+                'text' => $message,
+            ]);
         }
 
-        return $this->client->post($singleMessageEndpoint, [
-            'from' => 'NEXTSMS',
-            'to' => $phoneNumber,
-            'text' => $message,
-        ]);
+        $payload = [];
+        foreach ($response['messages'] as $element){
+            $payload[$element['messageId']] = $element['status']['groupName'];
+        }
+        return new SendSmsResponse($payload);
+
     }
 
     /**
