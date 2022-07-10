@@ -7,9 +7,10 @@ namespace JasiriLabs\NanasiSms\NextSms;
 use JasiriLabs\NanasiSms\Config;
 use JasiriLabs\NanasiSms\DeliveryReportResponse;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\ResponseData;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SmsBalanceResponse;
 
 class NextSmsAdapter implements NanasiSmsAdapter
 {
@@ -56,9 +57,14 @@ class NextSmsAdapter implements NanasiSmsAdapter
         }
 
         $payload = [];
+
         foreach ($response['messages'] as $element){
-            $payload[$element['messageId']] = $element['status']['groupName'];
+            $payload[] = new ResponseData(
+                $element['messageId'],
+                $element['status']['groupName']
+            );
         }
+
         return new SendSmsResponse($payload);
 
     }

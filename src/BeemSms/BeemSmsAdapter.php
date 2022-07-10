@@ -7,9 +7,9 @@ namespace JasiriLabs\NanasiSms\BeemSms;
 use JasiriLabs\NanasiSms\Config;
 use JasiriLabs\NanasiSms\DeliveryReportResponse;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SmsBalanceResponse;
 
 class BeemSmsAdapter implements NanasiSmsAdapter
 {
