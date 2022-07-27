@@ -6,16 +6,12 @@ namespace JasiriLabs\NanasiSms;
 
 class SendSmsResponse
 {
-    public string|array $sentTo;
 
-    public string|array $message;
+    public array $messageId;
 
-    public string|array $status;
-
-    public function __construct($message, $sentTo, $status)
+    public function __construct($messageId)
     {
-        $this->message = $message;
-        $this->sentTo = $sentTo;
-        $this->status = $status;
+        $this->messageId = $messageId;
     }
+
 }

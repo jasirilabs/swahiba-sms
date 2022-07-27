@@ -10,6 +10,7 @@ use JasiriLabs\NanasiSms\NanasiSmsAdapter;
 use JasiriLabs\NanasiSms\ScheduleSmsResponse;
 use JasiriLabs\NanasiSms\SendSmsResponse;
 use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use function PHPStan\dumpType;
 
 class NextSmsAdapter implements NanasiSmsAdapter
 {
@@ -28,8 +29,8 @@ class NextSmsAdapter implements NanasiSmsAdapter
     }
 
     /**
-     * @param  string|array  $phoneNumber
-     * @param  string|array  $message
+     * @param string|array $phoneNumber
+     * @param string|array $message
      * @return SendSmsResponse
      */
     public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
@@ -48,20 +49,35 @@ class NextSmsAdapter implements NanasiSmsAdapter
                 ];
             }
 
-            return  $this->client->post($multipleMessageEndpoint, $data);
+            $response = $this->client->post($multipleMessageEndpoint, $data);
+
+
+             $messageIds = [];
+
+            foreach ($response['messages'] as $message) {
+
+                $messageIds[] = $message['messageId'];
+
+            }
+
+            return new SendSmsResponse($messageIds);
+
         }
 
-        return $this->client->post($singleMessageEndpoint, [
+        $response = $this->client->post($singleMessageEndpoint, [
             'from' => 'NEXTSMS',
             'to' => $phoneNumber,
             'text' => $message,
         ]);
+
+
+        return new SendSmsResponse($response->messageId);
     }
 
     /**
-     * @param  string|array  $phoneNumber
-     * @param  string|array  $message
-     * @param  array  $params
+     * @param string|array $phoneNumber
+     * @param string|array $message
+     * @param array $params
      * @return ScheduleSmsResponse
      */
     public function schedule(string|array $phoneNumber, string|array $message, array $params): ScheduleSmsResponse
@@ -78,7 +94,7 @@ class NextSmsAdapter implements NanasiSmsAdapter
     }
 
     /**
-     * @param  array|null  $params
+     * @param array|null $params
      * @return DeliveryReportResponse
      */
     public function deliveryReport(array|null $params): DeliveryReportResponse
