@@ -5,3 +5,9 @@
 ### Added
 
 - Core API functionality ie (Send, Schedule, delivery reports and balance) is now available. 
+
+## 0.0.2 - 2022-07-07
+
+### Fixed
+
+- Namespace issue with the NextSmsAdapter.

@@ -4,28 +4,25 @@ declare(strict_types=1);
 
 namespace JasiriLabs\NanasiSms;
 
-
-class NanasiSms  implements NanasiSmsOperator
+class NanasiSms implements NanasiSmsOperator
 {
     /**
      * @var NanasiSmsAdapter
      */
-
     private NanasiSmsAdapter $adapter;
 
     public function __construct(
         NanasiSmsAdapter $adapter,
-    )
-    {
+    ) {
         $this->adapter = $adapter;
     }
 
     /**
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
-     * @return array
+     * @return SendSmsResponse
      */
-    public function send(string|array $phoneNumber, string|array $message): array
+    public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
     {
         return $this->adapter->send($phoneNumber, $message);
     }
@@ -34,29 +31,26 @@ class NanasiSms  implements NanasiSmsOperator
      * @param  string|array  $phoneNumber
      * @param  string|array  $message
      * @param  array  $params
-     * @return array
+     * @return ScheduleSmsResponse
      */
-    public function schedule(string|array $phoneNumber, string|array $message, array $params): array
+    public function schedule(string|array $phoneNumber, string|array $message, array $params): ScheduleSmsResponse
     {
         return $this->adapter->schedule($phoneNumber, $message, $params);
     }
 
     /**
      * @param  array|null  $params
-     * @return array
+     * @return DeliveryReportResponse
      */
-    public function deliveryReport(array|null $params = null): array
+    public function deliveryReport(array|null $params = null): DeliveryReportResponse
     {
         return $this->adapter->deliveryReport($params);
     }
 
-
-
-
     /**
-     * @return array
+     * @return SmsBalanceResponse
      */
-    public function balance(): array
+    public function balance(): SmsBalanceResponse
     {
         return $this->adapter->balance();
     }
