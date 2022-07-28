@@ -7,9 +7,10 @@ namespace JasiriLabs\NanasiSms\NextSms;
 use JasiriLabs\NanasiSms\Config;
 use JasiriLabs\NanasiSms\DeliveryReportResponse;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\NanasiSmsResponse\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\NanasiSmsResponse\SmsBalanceResponse;
+use JasiriLabs\NanasiSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use JasiriLabs\NanasiSms\ScheduleSmsResponse;
+
 
 class NextSmsAdapter implements NanasiSmsAdapter
 {

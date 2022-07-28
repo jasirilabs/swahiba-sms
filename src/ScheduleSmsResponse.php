@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms\NanasiSmsResponse;
+
+namespace JasiriLabs\NanasiSms;
+
 
 class ScheduleSmsResponse
 {
