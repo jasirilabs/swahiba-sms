@@ -20,7 +20,7 @@ class BeemSmsAdapter implements NanasiSmsAdapter
 
     public BeamSmsClient $client;
 
-    public function __construct(Config $config, $apiVersion = 'v1')
+    public function __construct(Config $config, string $apiVersion = 'v1')
     {
         $this->config = $config;
 
@@ -60,7 +60,9 @@ class BeemSmsAdapter implements NanasiSmsAdapter
      */
     public function deliveryReport(array|null $params): DeliveryReportResponse
     {
-        return $this->client->get('/delivery-reports', $params);
+         $this->client->get('/delivery-reports', $params);
+
+         return new DeliveryReportResponse();
     }
 
     /**
@@ -68,12 +70,14 @@ class BeemSmsAdapter implements NanasiSmsAdapter
      */
     public function balance(): SmsBalanceResponse
     {
-        return $this->client->get('/vendors/balance');
+         $this->client->get('/vendors/balance');
+
+         return new SmsBalanceResponse();
     }
 
     /**
      * @param  array|string  $phoneNumber
-     * @param  mixed  $text
+     * @param  array|string  $text
      * @param  array|null  $params
      * @return mixed
      */

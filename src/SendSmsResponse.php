@@ -7,9 +7,9 @@ namespace JasiriLabs\NanasiSms;
 class SendSmsResponse
 {
 
-    public array $messageId;
+    public array|string $messageId;
 
-    public function __construct($messageId)
+    public function __construct(array|string $messageId)
     {
         $this->messageId = $messageId;
     }

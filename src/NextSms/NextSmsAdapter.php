@@ -70,7 +70,7 @@ class NextSmsAdapter implements NanasiSmsAdapter
         ]);
 
 
-        return new SendSmsResponse($response->messageId);
+        return new SendSmsResponse($response['messageId']);
     }
 
     /**
@@ -89,7 +89,9 @@ class NextSmsAdapter implements NanasiSmsAdapter
             'time' => $params['time'],
         ];
 
-        return $this->client->post('/text/single', $data);
+         $this->client->post('/text/single', $data);
+
+         return new ScheduleSmsResponse();
     }
 
     /**
@@ -98,7 +100,9 @@ class NextSmsAdapter implements NanasiSmsAdapter
      */
     public function deliveryReport(array|null $params): DeliveryReportResponse
     {
-        return $this->client->get('/reports', $params);
+         $this->client->get('/reports', $params);
+
+         return new DeliveryReportResponse();
     }
 
     /**
@@ -106,6 +110,8 @@ class NextSmsAdapter implements NanasiSmsAdapter
      */
     public function balance(): SmsBalanceResponse
     {
-        return $this->client->get('/balance');
+         $this->client->get('/balance');
+
+         return new SmsBalanceResponse();
     }
 }

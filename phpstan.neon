@@ -6,8 +6,5 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
 
-    ignoreErrors:
-        - message: '#^Undefined variable: \$this$#'
-          path:
-               - tests/*
+
 

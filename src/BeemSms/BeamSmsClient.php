@@ -24,7 +24,7 @@ class BeamSmsClient
 
     private Client $client;
 
-    public function __construct($config, $apiVersion)
+    public function __construct(Config  $config, string $apiVersion)
     {
         $this->apiVersion = $apiVersion;
         $this->config = $config;
@@ -41,7 +41,7 @@ class BeamSmsClient
         );
     }
 
-    public function post($endpoint, $data)
+    public function post(string $endpoint, array $data): array
     {
         $url = '/'.$this->apiVersion.$endpoint;
         $response = $this->client->request('POST', $url, [
@@ -51,7 +51,7 @@ class BeamSmsClient
         return json_decode($response->getBody()->getContents(), true);
     }
 
-    public function get($endpoint, array $params = null)
+    public function get(string $endpoint, array $params = null): array
     {
         $url = '/public/'.$this->apiVersion.$endpoint;
         $response = $this->client->request('GET', $url, [

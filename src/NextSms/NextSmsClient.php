@@ -24,7 +24,7 @@ class NextSmsClient
 
     private Client $client;
 
-    public function __construct($config)
+    public function __construct(Config $config)
     {
         $this->config = $config;
 
@@ -40,7 +40,7 @@ class NextSmsClient
         );
     }
 
-    public function post($endpoint, $data)
+    public function post(string $endpoint, array $data): array
     {
         $url = $this->apiVersion.$endpoint;
         $response = $this->client->request('POST', $url, [
@@ -50,7 +50,7 @@ class NextSmsClient
         return json_decode($response->getBody()->getContents(), true);
     }
 
-    public function get($endpoint, array $params = null)
+    public function get(string $endpoint, array $params = null): array
     {
         $url = $this->apiVersion.$endpoint;
 
