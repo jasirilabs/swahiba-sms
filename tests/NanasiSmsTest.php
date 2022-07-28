@@ -1,10 +1,8 @@
 <?php
 
 
-use JasiriLabs\NanasiSms\Config;
+
 use JasiriLabs\NanasiSms\NanasiSms;
-use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\NextSms\NextSmsAdapter;
 use JasiriLabs\NanasiSms\SendSmsResponse;
 
 

@@ -7,10 +7,9 @@ namespace JasiriLabs\NanasiSms\NextSms;
 use JasiriLabs\NanasiSms\Config;
 use JasiriLabs\NanasiSms\DeliveryReportResponse;
 use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\SmsBalanceResponse;
-use function PHPStan\dumpType;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SmsBalanceResponse;
 
 class NextSmsAdapter implements NanasiSmsAdapter
 {
@@ -36,7 +35,6 @@ class NextSmsAdapter implements NanasiSmsAdapter
     public function send(string|array $phoneNumber, string|array $message): SendSmsResponse
     {
         $singleMessageEndpoint = '/text/single';
-
         $multipleMessageEndpoint = '/text/multi';
 
         if (is_array($message)) {

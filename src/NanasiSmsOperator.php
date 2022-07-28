@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace JasiriLabs\NanasiSms;
 
+use JasiriLabs\NanasiSms\NanasiSmsResponse\ScheduleSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SendSms\SendSmsResponse;
+use JasiriLabs\NanasiSms\NanasiSmsResponse\SmsBalanceResponse;
+
 interface NanasiSmsOperator
 {
     /**
