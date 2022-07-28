@@ -25,8 +25,9 @@ interface NanasiSmsAdapter
 
     /**
      * @param  array|null  $params
-     * @return array
+     * @return DeliveryReportResponse
      */
+     
     public function deliveryReport(array|null $params): DeliveryReportResponse;
 
     /**
