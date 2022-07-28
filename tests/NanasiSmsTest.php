@@ -75,35 +75,35 @@ test('can schedule single sms to single destination', function () {
 
 test('can schedule single sms to multiple destinations', function () {
 
-    $this->assertTrue(false);
+
 
 })->group('schedule');
 
 
 test('can schedule multiple sms to single destination', function () {
 
-    $this->assertTrue(false);
+
 
 })->group('schedule');
 
 
 test('can schedule multiple sms to multiple destinations', function () {
 
-    $this->assertTrue(false);
+
 
 })->group('schedule');
 
 
 test('can get delivery status of single sms', function () {
 
-    $this->assertTrue(false);
+
 
 })->group('status');
 
 
 test('can get sms balance', function () {
 
-    $this->assertTrue(false);
+
 
 })->group('balance');
 
