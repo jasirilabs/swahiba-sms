@@ -70,7 +70,7 @@ class NextSmsAdapter implements NanasiSmsAdapter
         ]);
 
 
-        return new SendSmsResponse($response['messageId']);
+        return new SendSmsResponse($response['messages'][0]['messageId']);
     }
 
     /**
