@@ -23,5 +23,5 @@ jobs:
         run: composer update  --no-interaction --no-progress --ansi
 
       - name: Unit Tests
-#        run: vendor/bin/pest --ci --stop-on-failure --debug
+        run: ./vendor/bin/pest
 
