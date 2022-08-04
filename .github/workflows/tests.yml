@@ -23,7 +23,7 @@ jobs:
         run: rm -rf ~/.composer/cache/*
 
       - name: Install PHP dependencies
-        run: composer update  --no-interaction --no-progress --ansi
+        run: composer update  --no-interaction --no-progress --ansi --ignore-platform-reqs
 
       - name: Execute Tests
         run: vendor/bin/pest
