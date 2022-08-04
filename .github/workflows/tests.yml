@@ -19,9 +19,12 @@ jobs:
           tools: composer:v2
           coverage: none
 
+      - name: Clear cache
+        run: rm -rf ~/.composer/cache/*
+
       - name: Install PHP dependencies
         run: composer update  --no-interaction --no-progress --ansi
 
-      - name: Unit Tests
-        run: ./vendor/bin/pest
+      - name: Execute Tests
+        run: vendor/bin/pest
 
