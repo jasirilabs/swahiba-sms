@@ -4,10 +4,11 @@ name: Close sub-split PRs
 on:
   push:
     branches:
+      - 0.x
       - main
   pull_request:
     branches:
-      - main
+      - 0.x
       - main
   schedule:
     - cron: '30 7 * * *'
