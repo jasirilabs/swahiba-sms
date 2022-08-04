@@ -8,10 +8,7 @@ use JasiriLabs\NanasiSms\SendSmsResponse;
 
 beforeEach(closure: function (){
 
-    $this->sms = mock(NanasiSms::class)
-        ->shouldReceive('send', 'schedule', 'deliveryReport', 'balance')
-        ->andReturn(new SendSmsResponse(['35891385367034994620', '35891385367034994621']))
-        ->getMock();
+
 
 });
 
