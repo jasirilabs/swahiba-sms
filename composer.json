@@ -1,5 +1,5 @@
 {
-    "name": "jasirilabs/nanasisms",
+    "name": "jasirilabs/swahiba-sms",
     "description": "Aggregating SMS services to a single API",
     "type": "library",
     "require": {
