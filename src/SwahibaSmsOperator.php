@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms;
+namespace JasiriLabs\SwahibaSms;
 
-interface NanasiSmsOperator
+interface SwahibaSmsOperator
 {
     /**
      * @param  string|array  $phoneNumber

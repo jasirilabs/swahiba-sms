@@ -2,8 +2,8 @@
 
 
 
-use JasiriLabs\NanasiSms\NanasiSms;
-use JasiriLabs\NanasiSms\SendSmsResponse;
+use JasiriLabs\SwahibaSms\SwahibaSms;
+use JasiriLabs\SwahibaSms\SendSmsResponse;
 
 
 beforeEach(closure: function (){
@@ -15,7 +15,7 @@ beforeEach(closure: function (){
 
 test('can send single sms to single destination', function () {
 
-    $sms = mock(NanasiSms::class)
+    $sms = mock(SwahibaSms::class)
         ->shouldReceive('send')
         ->andReturn(new SendSmsResponse(['35891385367034994620']))
         ->getMock();
@@ -29,7 +29,7 @@ test('can send single sms to single destination', function () {
 
 test('can send single sms to multiple destinations', function () {
 
-    $sms = mock(NanasiSms::class)
+    $sms = mock(SwahibaSms::class)
         ->shouldReceive('send')
         ->andReturn(new SendSmsResponse(['35891385367134994620']))
         ->getMock();
@@ -43,7 +43,7 @@ test('can send single sms to multiple destinations', function () {
 
 test('can send multiple sms to single destination', function () {
 
-    $sms = mock(NanasiSms::class)
+    $sms = mock(SwahibaSms::class)
         ->shouldReceive('send')
         ->andReturn(new SendSmsResponse(['35891385367134994620', '35391385367034994621']))
         ->getMock();
@@ -55,7 +55,7 @@ test('can send multiple sms to single destination', function () {
 
 test('can send multiple sms to multiple destinations', function () {
 
-    $sms = mock(NanasiSms::class)
+    $sms = mock(SwahibaSms::class)
         ->shouldReceive('send')
         ->andReturn(new SendSmsResponse(['35891385367134994620', '35391385367034994621']))
         ->getMock();

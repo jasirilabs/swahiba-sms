@@ -1,15 +1,15 @@
 {
-    "name": "jasirilabs/nanasi-twiliosms",
+    "name": "jasirilabs/swahiba-twiliosms",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\NanasiSms\\TwilioSms\\": ""
+            "JasiriLabs\\SwahibaSms\\TwilioSms\\": ""
         }
     },
     "authors": [
         {
             "name": "brunoalfred",
-            "email": "alfredybruno@gmail.com"
+            "email": "mambo@brunoalfred.com"
         }
     ],
     "require": {}

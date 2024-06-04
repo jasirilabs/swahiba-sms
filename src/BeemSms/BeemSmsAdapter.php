@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms\BeemSms;
+namespace JasiriLabs\SwahibaSms\BeemSms;
 
-use JasiriLabs\NanasiSms\Config;
-use JasiriLabs\NanasiSms\DeliveryReportResponse;
-use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use JasiriLabs\SwahibaSms\Config;
+use JasiriLabs\SwahibaSms\DeliveryReportResponse;
+use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
+use JasiriLabs\SwahibaSms\ScheduleSmsResponse;
+use JasiriLabs\SwahibaSms\SendSmsResponse;
+use JasiriLabs\SwahibaSms\SmsBalanceResponse;
 
-class BeemSmsAdapter implements NanasiSmsAdapter
+class BeemSmsAdapter implements SwahibaSmsAdapter
 {
     /**
      * @var Config

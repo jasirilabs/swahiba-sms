@@ -1,12 +1,12 @@
-## Sub-split of NanasiSms for BeemSms
+## Sub-split of SwahibaSms for BeemSms
 
-> ⚠️ this is a sub-split, for pull requests and issues, visit: https://github.com/jasirilabs/nanasisms
+> ⚠️ this is a sub-split, for pull requests and issues, visit: https://github.com/jasirilabs/swahiba-sms
 
 Require this package to make use of BeemSms.
 
 
 ```bash
-composer require jasirilabs/nanasi-beemsms
+composer require jasirilabs/swahiba-beemsms
 ```
 
-View the [documentation of NanasiSms]().
+View the [documentation of SwahibaSms]().
