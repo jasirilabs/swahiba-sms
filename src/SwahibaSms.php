@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms;
+namespace JasiriLabs\SwahibaSms;
 
 
-class NanasiSms implements NanasiSmsOperator
+class SwahibaSms implements SwahibaSmsOperator
 {
     /**
-     * @var NanasiSmsAdapter
+     * @var SwahibaSmsAdapter
      */
-    private NanasiSmsAdapter $adapter;
+    private SwahibaSmsAdapter $adapter;
 
     public function __construct(
-        NanasiSmsAdapter $adapter,
+        SwahibaSmsAdapter $adapter,
     ) {
         $this->adapter = $adapter;
     }

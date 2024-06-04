@@ -1,14 +1,14 @@
 {
-    "name": "jasirilabs/nanasi-beemsms",
+    "name": "jasirilabs/swahiba-beemsms",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\NanasiSms\\BeemSms\\": ""
+            "JasiriLabs\\SwahibaSms\\BeemSms\\": ""
         }
     },
     "authors": [
         {
             "name": "brunoalfred",
-            "email": "alfredybruno@gmail.com"
+            "email": "mambo@brunoalfred.com"
         }
     ],
     "require": {}

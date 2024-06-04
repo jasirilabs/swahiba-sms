@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms\BeemSms;
+namespace JasiriLabs\SwahibaSms\BeemSms;
 
 use GuzzleHttp\Client;
-use JasiriLabs\NanasiSms\Config;
+use JasiriLabs\SwahibaSms\Config;
 
 class BeamSmsClient
 {

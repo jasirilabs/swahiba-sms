@@ -14,12 +14,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\NanasiSms\\": "src/"
+            "JasiriLabs\\SwahibaSms\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JasiriLabs\\NanasiSms\\Tests\\": "tests"
+            "JasiriLabs\\SwahibaSms\\Tests\\": "tests"
         }
     },
     "config": {
@@ -30,7 +30,7 @@
     "authors": [
         {
             "name": "Bruno Alfred",
-            "email": "bruno@jasirilabs.com"
+            "email": "mambo@brunoalfred.com"
         }
     ]
 }

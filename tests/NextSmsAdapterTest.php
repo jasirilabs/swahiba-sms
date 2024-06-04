@@ -1,9 +1,9 @@
 <?php
 
-use JasiriLabs\NanasiSms\Config;
-use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\NextSms\NextSmsAdapter;
-use JasiriLabs\NanasiSms\SendSmsResponse;
+use JasiriLabs\SwahibaSms\Config;
+use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
+use JasiriLabs\SwahibaSms\NextSms\NextSmsAdapter;
+use JasiriLabs\SwahibaSms\SendSmsResponse;
 
 beforeEach(closure: function (){
 
@@ -12,7 +12,7 @@ beforeEach(closure: function (){
         'password' => '',
     ]);
 
-    $adapter = mock(NextSmsAdapter::class, NanasiSmsAdapter::class)
+    $adapter = mock(NextSmsAdapter::class, SwahibaSmsAdapter::class)
         ->shouldReceive('send', 'schedule', 'deliveryReport', 'balance')
         ->andReturn(new SendSmsResponse(['35891385367034994620', '35891385367034994621']));
 

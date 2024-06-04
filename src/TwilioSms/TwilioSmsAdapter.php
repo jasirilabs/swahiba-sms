@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JasiriLabs\NanasiSms\TwilioSms;
+namespace JasiriLabs\SwahibaSms\TwilioSms;
 
-use JasiriLabs\NanasiSms\DeliveryReportResponse;
-use JasiriLabs\NanasiSms\NanasiSmsAdapter;
-use JasiriLabs\NanasiSms\ScheduleSmsResponse;
-use JasiriLabs\NanasiSms\SendSmsResponse;
-use JasiriLabs\NanasiSms\SmsBalanceResponse;
+use JasiriLabs\SwahibaSms\DeliveryReportResponse;
+use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
+use JasiriLabs\SwahibaSms\ScheduleSmsResponse;
+use JasiriLabs\SwahibaSms\SendSmsResponse;
+use JasiriLabs\SwahibaSms\SmsBalanceResponse;
 
-class TwilioSmsAdapter implements NanasiSmsAdapter
+class TwilioSmsAdapter implements SwahibaSmsAdapter
 {
     /**
      * @param  string|array  $phoneNumber

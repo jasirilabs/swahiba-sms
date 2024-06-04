@@ -16,11 +16,11 @@ Nanasi Sms
 
 use JasiriLabs\NanasiSMS\Config;
 use JasiriLabs\NanasiSMS\NextSms\NextSmsAdapter;
-use JasiriLabs\NanasiSMS\NanasiSMS;
+use JasiriLabs\NanasiSMS\SwahibaSms;
 
 $config = new Config(['username' => 'username', 'password' => 'password']);
 
-$sms = new NanasiSMS(
+$sms = new SwahibaSms(
     new NextSmsAdapter($config),
     []
 );

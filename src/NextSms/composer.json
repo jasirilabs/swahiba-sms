@@ -1,16 +1,16 @@
 {
-    "name": "jasirilabs/nanasi-nextsms",
-    "description": "NextSMS nanasisms adapter for NextSMS",
+    "name": "jasirilabs/swahiba-nextsms",
+    "description": "NextSMS swahibasms adapter for NextSMS",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "JasiriLabs\\NanasiSms\\NextSms\\": ""
+            "JasiriLabs\\SwahibaSms\\NextSms\\": ""
         }
     },
     "authors": [
         {
             "name": "brunoalfred",
-            "email": "alfredybruno@gmail.com"
+            "email": "mambo@brunoalfred.com"
         }
     ],
     "require": {}

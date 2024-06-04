@@ -1,6 +1,6 @@
 <?php
 
-namespace JasiriLabs\NanasiSms;
+namespace JasiriLabs\SwahibaSms;
 
 class Config
 {

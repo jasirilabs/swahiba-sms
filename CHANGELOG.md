@@ -11,3 +11,7 @@
 ### Fixed
 
 - Namespace issue with the NextSmsAdapter.
+
+## 0.0.3 - 2024-06-04
+
+- Refactoring and rebranding the package. Change from NanasiSms to SwahibaSms
