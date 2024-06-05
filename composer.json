@@ -7,10 +7,9 @@
         "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
-        "pestphp/pest": "^1.21",
         "laravel/pint": "^0.2.1",
         "phpstan/phpstan": "^1.8",
-        "pestphp/pest-plugin-mock": "^1.0"
+        "phpunit/phpunit": "^11.1"
     },
     "autoload": {
         "psr-4": {
