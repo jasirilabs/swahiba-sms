@@ -18,7 +18,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "JasiriLabs\\SwahibaSms\\Tests\\": "tests"
+            "JasiriLabs\\SwahibaSms\\Tests\\": "tests/"
         }
     },
     "config": {
