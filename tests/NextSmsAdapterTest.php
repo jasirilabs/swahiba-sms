@@ -1,15 +1,10 @@
 <?php declare(strict_types=1);
 
 use JasiriLabs\SwahibaSms\Config;
-use JasiriLabs\SwahibaSms\NextSms\NextSmsClient;
 use JasiriLabs\SwahibaSms\NextSms\NextSmsClientStub;
-use JasiriLabs\SwahibaSms\SwahibaSms;
 use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
 use JasiriLabs\SwahibaSms\NextSms\NextSmsAdapter;
-use JasiriLabs\SwahibaSms\SendSmsResponse;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
-
 
 final class NextSmsAdapterTest extends SwahibaSmsAdapterTestCase
 {
