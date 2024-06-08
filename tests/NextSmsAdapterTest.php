@@ -1,6 +1,9 @@
 <?php declare(strict_types=1);
 
 use JasiriLabs\SwahibaSms\Config;
+use JasiriLabs\SwahibaSms\NextSms\NextSmsClient;
+use JasiriLabs\SwahibaSms\NextSms\NextSmsClientStub;
+use JasiriLabs\SwahibaSms\SwahibaSms;
 use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
 use JasiriLabs\SwahibaSms\NextSms\NextSmsAdapter;
 use JasiriLabs\SwahibaSms\SendSmsResponse;
@@ -8,90 +11,49 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 
-
-final class NextSmsAdapterTest extends TestCase
+final class NextSmsAdapterTest extends SwahibaSmsAdapterTestCase
 {
+
+    /**
+     * @var NextSmsClientStub
+     */
+    private static NextSmsClientStub $stubNextSmsClient;
+
+    protected static function createSwahibaSmsAdapter(bool $streaming = true, array $options = []): SwahibaSmsAdapter
+    {
+        $config = new Config([
+            'username' => 'foo',
+            'password' => 'baz',
+        ]);
+
+        static::$stubNextSmsClient = new NextSmsClientStub($config);
+//        static::$stubNextSmsClient->stageResult('send', new SendSmsResponse(['35891385367034994620', '35891385367034994621']));
+
+        return new NextSmsAdapter(static::$stubNextSmsClient);
+    }
+
     #[Test] public function can_send_single_sms__to_single_channel_as_expected(): void
     {
-        // Arrange
 
+        // Arrange
+        $adapter = $this->adapter();
 
         // Act
-
+        $response = $adapter->send('255757221600', 'Hello sigma SMS!');
 
         // Assert
         $this->assertTrue(true);
-        
-    }
 
+    }
 }
 
-
-//beforeEach(closure: function (){
-//
-//    $config = new Config([
-//        'username' => '',
-//        'password' => '',
-//    ]);
-//
-//    $adapter = mock(NextSmsAdapter::class, SwahibaSmsAdapter::class)
-//        ->shouldReceive('send', 'schedule', 'deliveryReport', 'balance')
-//        ->andReturn(new SendSmsResponse(['35891385367034994620', '35891385367034994621']));
-//
-//
-//});
-//
-//test('can send single sms to single destination', function () {
-//
-////    $response = $this->sms->send('255757221600', 'Hello sigma SMS!');
-////
-////    $this->assertStringContainsString('255757221600', $response);
-//
-//})->group('send');
-//
-//test('can send single sms to multiple destinations', function () {
-//
-//
-//})->group('send');
-//
-//test('can send multiple sms to single destination', function () {
-//
-//
-//})->group('send');
-//
-//
-//test('can send multiple sms to multiple destinations', function () {
-//
-//
-//})->group('send');
-//
-//
-//
-//test('can schedule single sms to single destination', function () {
-//
-//})->group('schedule');
-//
-//
-//test('can schedule single sms to multiple destinations', function () {
-//
-//})->group('schedule');
-//
-//
-//test('can schedule multiple sms to single destination', function () {
-//
-//})->group('schedule');
-//
-//
-//test('can schedule multiple sms to multiple destinations', function () {
-//
-//})->group('schedule');
-//
-//
-//test('can get delivery status of single sms', function () {
-//
-//})->group('status');
-//
-//
-//test('can get sms balance', function () {
-//
-//})->group('balance');
+//can send single sms to single destination
+//can send single sms to multiple destinations
+//can send multiple sms to single destination
+//can send multiple sms to multiple destinations
+//can schedule single sms to single destination
+//can schedule single sms to multiple destinations
+//can schedule multiple sms to single destination
+//can schedule multiple sms to multiple destinations
+//can get delivery status of single sms
+//can get sms balance

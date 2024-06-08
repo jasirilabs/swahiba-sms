@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace JasiriLabs\SwahibaSms\NextSms;
 
-use JasiriLabs\SwahibaSms\Config;
 use JasiriLabs\SwahibaSms\DeliveryReportResponse;
 use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
 use JasiriLabs\SwahibaSms\SendSmsResponse;
@@ -14,18 +13,9 @@ use JasiriLabs\SwahibaSms\ScheduleSmsResponse;
 
 class NextSmsAdapter implements SwahibaSmsAdapter
 {
-    /**
-     * @var Config
-     */
-    private Config $config;
 
-    public NextSmsClient $client;
-
-    public function __construct(Config $config)
+    public function __construct(private readonly NextSmsClient $client)
     {
-        $this->config = $config;
-
-        $this->client = new NextSmsClient($this->config);
     }
 
     /**
@@ -51,7 +41,7 @@ class NextSmsAdapter implements SwahibaSmsAdapter
             $response = $this->client->post($multipleMessageEndpoint, $data);
 
 
-             $messageIds = [];
+            $messageIds = [];
 
             foreach ($response['messages'] as $message) {
 
@@ -89,9 +79,9 @@ class NextSmsAdapter implements SwahibaSmsAdapter
             'time' => $params['time'],
         ];
 
-         $this->client->post('/text/single', $data);
+        $this->client->post('/text/single', $data);
 
-         return new ScheduleSmsResponse();
+        return new ScheduleSmsResponse();
     }
 
     /**
@@ -100,9 +90,9 @@ class NextSmsAdapter implements SwahibaSmsAdapter
      */
     public function deliveryReport(array|null $params): DeliveryReportResponse
     {
-         $this->client->get('/reports', $params);
+        $this->client->get('/reports', $params);
 
-         return new DeliveryReportResponse();
+        return new DeliveryReportResponse();
     }
 
     /**
@@ -110,8 +100,8 @@ class NextSmsAdapter implements SwahibaSmsAdapter
      */
     public function balance(): SmsBalanceResponse
     {
-         $this->client->get('/balance');
+        $this->client->get('/balance');
 
-         return new SmsBalanceResponse();
+        return new SmsBalanceResponse();
     }
 }
