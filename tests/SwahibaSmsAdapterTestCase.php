@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace JasiriLabs\SwahibaSms\Tests;
+
 use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\TestCase;

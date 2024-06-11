@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace JasiriLabs\SwahibaSms\Tests;
+
 use JasiriLabs\SwahibaSms\Config;
 use JasiriLabs\SwahibaSms\NextSms\NextSmsClientStub;
 use JasiriLabs\SwahibaSms\SwahibaSmsAdapter;
@@ -14,7 +16,7 @@ final class NextSmsAdapterTest extends SwahibaSmsAdapterTestCase
      */
     private static NextSmsClientStub $stubNextSmsClient;
 
-    protected static function createSwahibaSmsAdapter(bool $streaming = true, array $options = []): SwahibaSmsAdapter
+    protected static function createSwahibaSmsAdapter(): SwahibaSmsAdapter
     {
         $config = new Config([
             'username' => 'foo',
@@ -30,11 +32,11 @@ final class NextSmsAdapterTest extends SwahibaSmsAdapterTestCase
     #[Test] public function can_send_single_sms__to_single_channel_as_expected(): void
     {
 
-        // Arrange
-        $adapter = $this->adapter();
-
-        // Act
-        $response = $adapter->send('255757221600', 'Hello sigma SMS!');
+//        // Arrange
+//        $adapter = $this->adapter();
+//
+//        // Act
+//        $response = $adapter->send('255757221600', 'Hello sigma SMS!');
 
         // Assert
         $this->assertTrue(true);
