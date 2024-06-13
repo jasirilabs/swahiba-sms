@@ -58,12 +58,12 @@ abstract class SwahibaSmsAdapterTestCase extends TestCase
 
     abstract protected static function createSwahibaSmsAdapter(): SwahibaSmsAdapter;
 
-//    protected function useAdapter(SwahibaSmsAdapter $adapter): SwahibaSmsAdapter
-//    {
-//        static::$adapter = $adapter;
-//        $this->isUsingCustomAdapter = true;
-//
-//        return $adapter;
-//    }
+    protected function useAdapter(SwahibaSmsAdapter $adapter): SwahibaSmsAdapter
+    {
+        static::$adapter = $adapter;
+        $this->isUsingCustomAdapter = true;
+
+        return $adapter;
+    }
 
 }
